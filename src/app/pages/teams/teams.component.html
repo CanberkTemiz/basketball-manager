@@ -1,0 +1,40 @@
+<!-- <mat-list class="list" *ngFor="let team of (teams$ | async)">
+    <mat-list-item class="list-item">
+        <div class="list-item-card">
+            
+            <div>
+                <h2>{{team.Name}}</h2>
+                <div class="team-details">
+                    <a href="#">Statistics</a>
+                    <a href="#">Schedule</a>
+                    <a href="#">Roster</a>
+                    <a href="#">Depth</a>
+                </div>
+            </div>
+        </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+</mat-list> -->
+
+<div class="container">
+    <div class="teams-grid">
+        <ng-container *ngIf="teams$ | async as groupedTeams">
+            <div *ngFor="let division of getDivision(groupedTeams)">
+                <h2>{{division}}</h2>
+                <mat-divider></mat-divider>
+                <div class="team-card" *ngFor="let team of groupedTeams[division]">
+                    <img [src]="team.WikipediaLogoUrl" alt="">
+                    <div>
+                        <h2>{{team.Name}}</h2>
+                        <div class="team-details">
+                            <a href="#">Statistics</a>
+                            <a href="#">Schedule</a>
+                            <a href="#">Roster</a>
+                            <a href="#">Depth</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

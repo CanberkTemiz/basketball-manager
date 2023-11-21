@@ -1,0 +1,41 @@
+/* .user-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}  
+
+.user-card {
+    border: 2px black solid;
+    margin: 5px;
+    background-color: rgb(252, 140, 140);
+} */
+
+.item {
+    border: 4px red solid;
+    background-color: rgb(250, 149, 149);
+}
+
+.grid-container {
+    border: 5px black solid;
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 100px);
+}
+
+.item-1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.item-2 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.item-3 {
+    grid-area: 3 / 3 / 4 / 4
+}
+
+input[type="file"] { 
+    opacity: 0; /* make transparent */
+    z-index: -1; /* move under anything else */
+    position: absolute; /* don't let it take up space */
+  }
