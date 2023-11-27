@@ -2,8 +2,14 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: "teams", loadComponent: () => import("./pages/teams/teams.component").then((m) => m.TeamsComponent)}
-  // { path: "/", loadComponent: () => import("./pages/home/home.component").then((m) => m.HomeComponent)},
+  { 
+    path: "teams", 
+    loadComponent: () => import("./pages/teams/teams.component").then((m) => m.TeamsComponent),
+  },
+  { 
+    path: "roster", 
+    loadComponent: () => import("./pages/teams/team-roster/team-roster.component").then((m) => m.TeamRosterComponent),
+  }
 ]
 
 @NgModule({
